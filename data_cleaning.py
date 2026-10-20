@@ -1,13 +1,12 @@
 import pandas as pd
 
-
 df = pd.read_csv('real_fuel_prices.csv')
 
+# Καθαρισμός διεύθυνσης και ημερομηνίας
 df['Διεύθυνση'] = df['Διεύθυνση'].str.split('\n').str[0].str.strip()
-
 df['Ημερομηνία'] = df['Ημερομηνία'].str.split(',').str[-1].str.strip()
 
-df = df.drop_duplicates()
+df = df.drop_duplicates(subset=['Διεύθυνση', 'Ημερομηνία'])
 
 df.to_csv('cleaned_fuel_prices.csv', index=False, encoding='utf-8-sig')
 

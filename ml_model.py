@@ -22,7 +22,6 @@ model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 mae = mean_absolute_error(y_test, predictions)
 
-print("\n--- ΑΠΟΤΕΛΕΣΜΑΤΑ ΒΕΛΤΙΩΜΕΝΟΥ ΜΟΝΤΕΛΟΥ ---")
 print(f"Το ΝΕΟ μέσο σφάλμα πρόβλεψης είναι: ±{mae:.3f}€ ανά λίτρο.")
 
 results = pd.DataFrame({
